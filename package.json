@@ -1,0 +1,26 @@
+{
+  "name": "cdif-ble-manager",
+  "version": "0.0.1",
+  "description": "BLE manager for CDIF framework",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "noble-device"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/out4b/cdif-ble-manager.git"
+  },
+  "author": "out4b",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/out4b/cdif-ble-manager/issues"
+  },
+  "homepage": "https://github.com/out4b/cdif-ble-manager",
+  "dependencies": {
+    "noble-device": "~1.1.0",
+    "cdif-yeelight-blue": "~1.0.1"
+  },
+}
