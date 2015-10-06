@@ -21,6 +21,7 @@
   "homepage": "https://github.com/out4b/cdif-ble-manager",
   "dependencies": {
     "noble-device": "~1.1.0",
-    "cdif-yeelight-blue": "~1.0.1"
+    "cdif-yeelight-blue": "~1.0.2",
+    "cdif-sensortag": "~1.2.0"
   }
 }
