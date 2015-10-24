@@ -5,7 +5,7 @@
     "minor": 0
   },
   "device": {
-    "deviceType": "urn:cdif-net:device:BluetoothSmart:1",
+    "deviceType": "urn:bluetooth-org:device:Unknown:1",
     "friendlyName": "",
     "manufacturer": "",
     "manufacturerURL": "",
