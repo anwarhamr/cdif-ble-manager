@@ -22,102 +22,147 @@
   "2a04": {
     "name": "Peripheral Preferred Connection Parameters",
     "type": "org.bluetooth.characteristic.gap.peripheral_preferred_connection_parameters",
-    "dataType": "number"
+    "dataType": "object"
   },
   "2a05": {
     "name": "Service Changed",
     "type": "org.bluetooth.characteristic.gatt.service_changed",
-    "dataType": "number"
+    "dataType": "object"
   },
   "2a06": {
     "name": "Alert Level",
     "type": "org.bluetooth.characteristic.alert_level",
-    "dataType": "number"
+    "dataType": "number",
+    "allowedValueRange": {
+      "minimum": 0,
+      "maximum": 2,
+      "step": 1
+    }
   },
   "2a07": {
     "name": "Tx Power Level",
     "type": "org.bluetooth.characteristic.tx_power_level",
-    "dataType": "number"
+    "dataType": "number",
+    "allowedValueRange": {
+      "minimum": -100,
+      "maximum": 20,
+      "step": 1
+    }
   },
   "2a08": {
     "name": "Date Time",
     "type": "org.bluetooth.characteristic.date_time",
-    "dataType": "number"
+    "dataType": "object"
   },
   "2a09": {
     "name": "Day of Week",
     "type": "org.bluetooth.characteristic.day_of_week",
-    "dataType": "number"
+    "dataType": "number",
+    "allowedValueRange": {
+      "minimum": 0,
+      "maximum": 7,
+      "step": 1
+    }
   },
   "2a0a": {
     "name": "Day Date Time",
     "type": "org.bluetooth.characteristic.day_date_time",
-    "dataType": "number"
+    "dataType": "object"
   },
   "2a0c": {
     "name": "Exact Time 256",
     "type": "org.bluetooth.characteristic.exact_time_256",
-    "dataType": "number"
+    "dataType": "object"
   },
   "2a0d": {
     "name": "DST Offset",
     "type": "org.bluetooth.characteristic.dst_offset",
-    "dataType": "number"
+    "dataType": "number",
+    "allowedValueRange": {
+      "minimum": 0,
+      "maximum": 8,
+      "step": 1
+    }
   },
   "2a0e": {
     "name": "Time Zone",
     "type": "org.bluetooth.characteristic.time_zone",
-    "dataType": "number"
+    "dataType": "number",
+    "allowedValueRange": {
+      "minimum": -48,
+      "maximum": 56,
+      "step": 1
+    }
   },
   "2a0f": {
     "name": "Local Time Information",
     "type": "org.bluetooth.characteristic.local_time_information",
-    "dataType": "number"
+    "dataType": "object"
   },
   "2a11": {
     "name": "Time with DST",
     "type": "org.bluetooth.characteristic.time_with_dst",
-    "dataType": "number"
+    "dataType": "object"
   },
   "2a12": {
     "name": "Time Accuracy",
     "type": "org.bluetooth.characteristic.time_accuracy",
-    "dataType": "number"
+    "dataType": "number",
+    "allowedValueRange": {
+      "minimum": 0,
+      "maximum": 253,
+      "step": 1
+    }
   },
   "2a13": {
     "name": "Time Source",
     "type": "org.bluetooth.characteristic.time_source",
-    "dataType": "number"
+    "dataType": "number",
+    "allowedValueRange": {
+      "minimum": 0,
+      "maximum": 7,
+      "step": 1
+    }
   },
   "2a14": {
     "name": "Reference Time Information",
     "type": "org.bluetooth.characteristic.reference_time_information",
-    "dataType": "number"
+    "dataType": "object"
   },
   "2a16": {
     "name": "Time Update Control Point",
     "type": "org.bluetooth.characteristic.time_update_control_point",
-    "dataType": "number"
+    "dataType": "number",
+    "allowedValueRange": {
+      "minimum": 1,
+      "maximum": 2,
+      "step": 1
+    }
   },
   "2a17": {
     "name": "Time Update State",
     "type": "org.bluetooth.characteristic.time_update_state",
-    "dataType": "number"
+    "dataType": "object"
   },
   "2a18": {
     "name": "Glucose Measurement",
     "type": "org.bluetooth.characteristic.glucose_measurement",
-    "dataType": "number"
+    "dataType": "object"
   },
   "2a19": {
     "name": "Battery Level",
     "type": "org.bluetooth.characteristic.battery_level",
-    "dataType": "number"
+    "dataType": "number",
+    "allowedValueRange": {
+      "minimum": 0,
+      "maximum": 100,
+      "step": 1
+    }
   },
   "2a1c": {
     "name": "Temperature Measurement",
     "type": "org.bluetooth.characteristic.temperature_measurement",
-    "dataType": "number"
+    "dataType": "object"
   },
   "2a1d": {
     "name": "Temperature Type",
@@ -127,12 +172,17 @@
   "2a1e": {
     "name": "Intermediate Temperature",
     "type": "org.bluetooth.characteristic.intermediate_temperature",
-    "dataType": "number"
+    "dataType": "object"
   },
   "2a21": {
     "name": "Measurement Interval",
     "type": "org.bluetooth.characteristic.measurement_interval",
-    "dataType": "number"
+    "dataType": "number",
+    "allowedValueRange": {
+      "minimum": 1,
+      "maximum": 65535,
+      "step": 1
+    }
   },
   "2a22": {
     "name": "Boot Keyboard Input Report",
@@ -142,7 +192,7 @@
   "2a23": {
     "name": "System ID",
     "type": "org.bluetooth.characteristic.system_id",
-    "dataType": "number"
+    "dataType": "object"
   },
   "2a24": {
     "name": "Model Number String",
@@ -182,12 +232,16 @@
   "2a2b": {
     "name": "Current Time",
     "type": "org.bluetooth.characteristic.current_time",
-    "dataType": "number"
+    "dataType": "object"
   },
   "2a2c": {
     "name": "Magnetic Declination",
     "type": "org.bluetooth.characteristic.magnetic_declination",
-    "dataType": "number"
+    "dataType": "number",
+    "allowedValueRange": {
+      "minimum": 0,
+      "maximum": 359.99
+    }
   },
   "2a31": {
     "name": "Scan Refresh",
@@ -207,22 +261,22 @@
   "2a34": {
     "name": "Glucose Measurement Context",
     "type": "org.bluetooth.characteristic.glucose_measurement_context",
-    "dataType": "number"
+    "dataType": "object"
   },
   "2a35": {
     "name": "Blood Pressure Measurement",
     "type": "org.bluetooth.characteristic.blood_pressure_measurement",
-    "dataType": "number"
+    "dataType": "object"
   },
   "2a36": {
     "name": "Intermediate Cuff Pressure",
     "type": "org.bluetooth.characteristic.intermediate_blood_pressure",
-    "dataType": "number"
+    "dataType": "object"
   },
   "2a37": {
     "name": "Heart Rate Measurement",
     "type": "org.bluetooth.characteristic.heart_rate_measurement",
-    "dataType": "number"
+    "dataType": "object"
   },
   "2a38": {
     "name": "Body Sensor Location",
@@ -237,52 +291,72 @@
   "2a3f": {
     "name": "Alert Status",
     "type": "org.bluetooth.characteristic.alert_status",
-    "dataType": "number"
+    "dataType": "number",
+    "allowedValueRange": {
+      "minimum": 0,
+      "maximum": 2,
+      "step": 1
+    }
   },
   "2a40": {
     "name": "Ringer Control Point",
     "type": "org.bluetooth.characteristic.ringer_control_point",
-    "dataType": "number"
+    "dataType": "number",
+    "allowedValueRange": {
+      "minimum": 1,
+      "maximum": 3,
+      "step": 1
+    }
   },
   "2a41": {
     "name": "Ringer Setting",
     "type": "org.bluetooth.characteristic.ringer_setting",
-    "dataType": "number"
+    "dataType": "number",
+    "allowedValueRange": {
+      "minimum": 0,
+      "maximum": 1,
+      "step": 1
+    }
   },
   "2a42": {
     "name": "Alert Category ID Bit Mask",
     "type": "org.bluetooth.characteristic.alert_category_id_bit_mask",
-    "dataType": "number"
+    "dataType": "object"
   },
   "2a43": {
     "name": "Alert Category ID",
     "type": "org.bluetooth.characteristic.alert_category_id",
-    "dataType": "number"
+    "dataType": "number",
+    "allowedValueRange": {
+      "minimum": 0,
+      "maximum": 255,
+      "step": 1
+    }
   },
   "2a44": {
     "name": "Alert Notification Control Point",
     "type": "org.bluetooth.characteristic.alert_notification_control_point",
-    "dataType": "number"
+    "dataType": "object"
   },
   "2a45": {
     "name": "Unread Alert Status",
     "type": "org.bluetooth.characteristic.unread_alert_status",
-    "dataType": "number"
+    "dataType": "object"
   },
   "2a46": {
     "name": "New Alert",
     "type": "org.bluetooth.characteristic.new_alert",
-    "dataType": "number"
+    "dataType": "object"
   },
   "2a47": {
     "name": "Supported New Alert Category",
     "type": "org.bluetooth.characteristic.supported_new_alert_category",
-    "dataType": "number"
+    "dataType": "object"
   },
   "2a48": {
     "name": "Supported Unread Alert Category",
     "type": "org.bluetooth.characteristic.supported_unread_alert_category",
-    "dataType": "number"
+    "dataType": "object"
   },
   "2a49": {
     "name": "Blood Pressure Feature",
@@ -292,7 +366,7 @@
   "2a4a": {
     "name": "HID Information",
     "type": "org.bluetooth.characteristic.hid_information",
-    "dataType": "number"
+    "dataType": "object"
   },
   "2a4b": {
     "name": "Report Map",
@@ -317,12 +391,12 @@
   "2a4f": {
     "name": "Scan Interval Window",
     "type": "org.bluetooth.characteristic.scan_interval_window",
-    "dataType": "number"
+    "dataType": "object"
   },
   "2a50": {
     "name": "PnP ID",
     "type": "org.bluetooth.characteristic.pnp_id",
-    "dataType": "number"
+    "dataType": "object"
   },
   "2a51": {
     "name": "Glucose Feature",
@@ -332,12 +406,12 @@
   "2a52": {
     "name": "Record Access Control Point",
     "type": "org.bluetooth.characteristic.record_access_control_point",
-    "dataType": "number"
+    "dataType": "object"
   },
   "2a53": {
     "name": "RSC Measurement",
     "type": "org.bluetooth.characteristic.rsc_measurement",
-    "dataType": "number"
+    "dataType": "object"
   },
   "2a54": {
     "name": "RSC Feature",
@@ -347,7 +421,7 @@
   "2a55": {
     "name": "SC Control Point",
     "type": "org.bluetooth.characteristic.sc_control_point",
-    "dataType": "number"
+    "dataType": "object"
   },
   "2a56": {
     "name": "Digital",
@@ -362,12 +436,12 @@
   "2a5a": {
     "name": "Aggregate",
     "type": "org.bluetooth.characteristic.aggregate",
-    "dataType": "number"
+    "dataType": "object"
   },
   "2a5b": {
     "name": "CSC Measurement",
     "type": "org.bluetooth.characteristic.csc_measurement",
-    "dataType": "number"
+    "dataType": "object"
   },
   "2a5c": {
     "name": "CSC Feature",
@@ -382,12 +456,12 @@
   "2a63": {
     "name": "Cycling Power Measurement",
     "type": "org.bluetooth.characteristic.cycling_power_measurement",
-    "dataType": "number"
+    "dataType": "object"
   },
   "2a64": {
     "name": "Cycling Power Vector",
     "type": "org.bluetooth.characteristic.cycling_power_vector",
-    "dataType": "number"
+    "dataType": "object"
   },
   "2a65": {
     "name": "Cycling Power Feature",
@@ -397,22 +471,22 @@
   "2a66": {
     "name": "Cycling Power Control Point",
     "type": "org.bluetooth.characteristic.cycling_power_control_point",
-    "dataType": "number"
+    "dataType": "object"
   },
   "2a67": {
     "name": "Location and Speed",
     "type": "org.bluetooth.characteristic.location_and_speed",
-    "dataType": "number"
+    "dataType": "object"
   },
   "2a68": {
     "name": "Navigation",
     "type": "org.bluetooth.characteristic.navigation",
-    "dataType": "number"
+    "dataType": "object"
   },
   "2a69": {
     "name": "Position Quality",
     "type": "org.bluetooth.characteristic.position_quality",
-    "dataType": "number"
+    "dataType": "object"
   },
   "2a6a": {
     "name": "LN Feature",
@@ -422,7 +496,7 @@
   "2a6b": {
     "name": "LN Control Point",
     "type": "org.bluetooth.characteristic.ln_control_point",
-    "dataType": "number"
+    "dataType": "object"
   },
   "2a6c": {
     "name": "Elevation",
@@ -452,7 +526,11 @@
   "2a71": {
     "name": "True Wind Direction",
     "type": "org.bluetooth.characteristic.true_wind_direction",
-    "dataType": "number"
+    "dataType": "number",
+    "allowedValueRange": {
+      "minimum": 0,
+      "maximum": 359.99
+    }
   },
   "2a72": {
     "name": "Apparent Wind Speed",
@@ -462,7 +540,11 @@
   "2a73": {
     "name": "Apparent Wind Direction",
     "type": "org.bluetooth.characteristic.apparent_wind_direction",
-    "dataType": "number"
+    "dataType": "number",
+    "allowedValueRange": {
+      "minimum": 0,
+      "maximum": 359.99
+    }
   },
   "2a74": {
     "name": "Gust Factor",
@@ -547,12 +629,12 @@
   "2a85": {
     "name": "Date of Birth",
     "type": "org.bluetooth.characteristic.date_of_birth",
-    "dataType": "number"
+    "dataType": "object"
   },
   "2a86": {
     "name": "Date of Threshold Assessment",
     "type": "org.bluetooth.characteristic.date_of_threshold_assessment",
-    "dataType": "number"
+    "dataType": "object"
   },
   "2a87": {
     "name": "Email Address",
@@ -577,7 +659,7 @@
   "2a8b": {
     "name": "Five Zone Heart Rate Limits",
     "type": "org.bluetooth.characteristic.five_zone_heart_rate_limits",
-    "dataType": "number"
+    "dataType": "object"
   },
   "2a8c": {
     "name": "Gender",
@@ -622,7 +704,7 @@
   "2a94": {
     "name": "Three Zone Heart Rate Limits",
     "type": "org.bluetooth.characteristic.three_zone_heart_rate_limits",
-    "dataType": "number"
+    "dataType": "object"
   },
   "2a95": {
     "name": "Two Zone Heart Rate Limit",
@@ -662,12 +744,12 @@
   "2a9c": {
     "name": "Body Composition Measurement",
     "type": "org.bluetooth.characteristic.body_composition_measurement",
-    "dataType": "number"
+    "dataType": "object"
   },
   "2a9d": {
     "name": "Weight Measurement",
     "type": "org.bluetooth.characteristic.weight_measurement",
-    "dataType": "number"
+    "dataType": "object"
   },
   "2a9e": {
     "name": "Weight Scale Feature",
@@ -682,12 +764,12 @@
   "2aa0": {
     "name": "Magnetic Flux Density - 2D",
     "type": "org.bluetooth.characteristic.magnetic_flux_density_2d",
-    "dataType": "number"
+    "dataType": "object"
   },
   "2aa1": {
     "name": "Magnetic Flux Density - 3D",
     "type": "org.bluetooth.characteristic.magnetic_flux_density_3d",
-    "dataType": "number"
+    "dataType": "object"
   },
   "2aa2": {
     "name": "Language",
@@ -702,7 +784,7 @@
   "2aa4": {
     "name": "Bond Management Control Point",
     "type": "org.bluetooth.characteristic.bond_management_control_point",
-    "dataType": "number"
+    "dataType": "object"
   },
   "2aa5": {
     "name": "Bond Management Feature",
@@ -717,31 +799,106 @@
   "2aa7": {
     "name": "CGM Measurement",
     "type": "org.bluetooth.characteristic.cgm_measurement",
-    "dataType": "number"
+    "dataType": "object"
   },
   "2aa8": {
     "name": "CGM Feature",
     "type": "org.bluetooth.characteristic.cgm_feature",
-    "dataType": "number"
+    "dataType": "object"
   },
   "2aa9": {
     "name": "CGM Status",
     "type": "org.bluetooth.characteristic.cgm_status",
-    "dataType": "number"
+    "dataType": "object"
   },
   "2aaa": {
     "name": "CGM Session Start Time",
     "type": "org.bluetooth.characteristic.cgm_session_start_time",
-    "dataType": "number"
+    "dataType": "object"
   },
   "2aab": {
     "name": "CGM Session Run Time",
     "type": "org.bluetooth.characteristic.cgm_session_run_time",
-    "dataType": "number"
+    "dataType": "object"
   },
   "2aac": {
     "name": "CGM Specific Ops Control Point",
     "type": "org.bluetooth.characteristic.cgm_specific_ops_control_point",
+    "dataType": "object"
+  },
+  "2aad": {
+    "name": "Indoor Positioning Configuration",
+    "type": "org.bluetooth.characteristic.indoor_positioning_configuration",
     "dataType": "number"
+  },
+  "2aae": {
+    "name": "Latitude",
+    "type": "org.bluetooth.characteristic.latitude",
+    "dataType": "number"
+  },
+  "2aaf": {
+    "name": "Longitude",
+    "type": "org.bluetooth.characteristic.Longitude",
+    "dataType": "number"
+  },
+  "2ab0": {
+    "name": "Local North Coordinate",
+    "type": "org.bluetooth.characteristic.local_north_coordinate",
+    "dataType": "number"
+  },
+  "2ab1": {
+    "name": "Local East Coordinate",
+    "type": "org.bluetooth.characteristic.local_east_coordinate",
+    "dataType": "number"
+  },
+  "2ab2": {
+    "name": "Floor Number",
+    "type": "org.bluetooth.characteristic.floor_number",
+    "dataType": "number"
+  },
+  "2ab3": {
+    "name": "Altitude",
+    "type": "org.bluetooth.characteristic.altitude",
+    "dataType": "number"
+  },
+  "2ab4": {
+    "name": "Uncertainty",
+    "type": "org.bluetooth.characteristic.uncertainty",
+    "dataType": "number"
+  },
+  "2ab5": {
+    "name": "Location Name",
+    "type": "org.bluetooth.characteristic.location_name",
+    "dataType": "string"
+  },
+  "2ab6": {
+    "name": "URI",
+    "type": "org.bluetooth.characteristic.uri",
+    "dataType": "string"
+  },
+  "2ab7": {
+    "name": "HTTP Headers",
+    "type": "org.bluetooth.characteristic.http_headers",
+    "dataType": "string"
+  },
+  "2ab8": {
+    "name": "HTTP Status Code",
+    "type": "org.bluetooth.characteristic.http_status_code",
+    "dataType": "object"
+  },
+  "2ab9": {
+    "name": "HTTP Entity Body",
+    "type": "org.bluetooth.characteristic.http_entity_body",
+    "dataType": "string"
+  },
+  "2aba": {
+    "name": "HTTP Control Point",
+    "type": "org.bluetooth.characteristic.http_control_point",
+    "dataType": "number"
+  },
+  "2abb": {
+    "name": "HTTPS Security",
+    "type": "org.bluetooth.characteristic.https_security",
+    "dataType": "boolean"
   }
 }
