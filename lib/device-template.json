@@ -8,21 +8,9 @@
     "deviceType": "urn:bluetooth-org:device:Unknown:1",
     "friendlyName": "",
     "manufacturer": "",
-    "manufacturerURL": "",
-    "modelDescription": "",
-    "modelName": "",
     "modelNumber": "",
     "serialNumber": "",
     "userAuth": false,
-    "iconList": [
-      {
-        "mimetype": "",
-        "width": 0,
-        "height": 0,
-        "depth": 0,
-        "url": ""
-      }
-    ],
     "serviceList": {}
   }
 }
