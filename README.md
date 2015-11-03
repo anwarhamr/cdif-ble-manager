@@ -12,6 +12,8 @@ This model is dynamically generated from the device's service discovery result. 
 ![alt tag](https://raw.githubusercontent.com/out4b/cdif-ble-manager/master/screenshot.png)
 
 
+By doing this mapping, we hope to provide client web app developers a cleaner programming interface for Bluetooth LE devices which follows standardized Bluetooth LE profiles.
+
 See following links for more details: <br/>
 
 
