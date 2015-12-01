@@ -9,10 +9,21 @@ var connect = function(user, pass, callback) {
   this.device.connectAndSetup(function(err) {
     if (!err) {
       if (_this instanceof GenericDevice) {
-        _this._updateDeviceSpec();
+        _this._updateDeviceSpec(function() {
+          var mod = _this.module;
+          if (mod) {
+            // re-emit device online event indicating spec update
+            mod.emit('deviceonline', _this, mod);
+          }
+          callback(null);
+        });
+      } else {
+        // assume no spec update for extended modules
+        callback(null);
       }
+    } else {
+      callback(err);
     }
-    callback(err);
   });
 };
 
