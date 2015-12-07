@@ -1,6 +1,6 @@
 {
   "name": "cdif-ble-manager",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "BLE manager for CDIF framework",
   "main": "index.js",
   "scripts": {
@@ -21,8 +21,8 @@
   "homepage": "https://github.com/out4b/cdif-ble-manager",
   "dependencies": {
     "noble-device": "~1.1.0",
-    "cdif-yeelight-blue": "~1.0.4",
-    "cdif-sensortag": "~1.2.1",
+    "cdif-yeelight-blue": "latest",
+    "cdif-sensortag": "latest",
     "async": "~1.4.2"
   }
 }
