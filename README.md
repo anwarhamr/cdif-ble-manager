@@ -12,7 +12,7 @@ This model is dynamically generated from the device's service discovery result. 
 ![alt tag](https://raw.githubusercontent.com/out4b/cdif-ble-manager/master/screenshot.png)
 
 
-By doing this mapping, we hope to provide client web app developers a cleaner programming interface for Bluetooth LE devices which follows standardized Bluetooth LE profiles. In reality, there would be few manufacturers produce smart devices without their own extensions, however by doing this, we hope to give client apps a fall back so they can still access device's standardized profiles even they don't recognize those vendor-specific extensions, and also provide the ability to access BLE devices from remote places.
+By doing this mapping, we hope to provide client web app developers a cleaner programming interface for Bluetooth LE devices which follows standardized Bluetooth LE profiles. Unlike other protocols such as Z-Wave which has more uniformed device profiles, Bluetooth LE is more open and freely used. And in reality, there would be few manufacturers produce BLE device products without their own extensions, e.g. those vendor-specific service, characteristics and controlling commands. However, we hope that, by providing support to standardized GATT profiles as defined by bluetooth.org, client applications may still access devices' standardized profiles and benefit from an open and inter-operable solution.
 
 See following links for more details: <br/>
 
