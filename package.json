@@ -22,6 +22,7 @@
   "dependencies": {
     "noble-device": "~1.1.0",
     "cdif-yeelight-blue": "~1.0.3",
-    "cdif-sensortag": "~1.2.0"
+    "cdif-sensortag": "~1.2.0",
+    "async": "~1.4.2"
   }
 }
