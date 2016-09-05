@@ -1,115 +1,172 @@
 {
-  "2a00": {
-    "name": "Device Name",
-    "type": "org.bluetooth.characteristic.gap.device_name",
-    "dataType": "string",
-    "nativeType": "string"
-  },
-  "2a01": {
-    "name": "Appearance",
-    "type": "org.bluetooth.characteristic.gap.appearance",
-    "dataType": "integer",
-    "nativeType": "uint16",
-    "allowedValueRange": {
-      "minimum": 0,
-      "maximum": 65535
-    }
-  },
-  "2a02": {
-    "name": "Peripheral Privacy Flag",
-    "type": "org.bluetooth.characteristic.gap.peripheral_privacy_flag",
-    "dataType": "boolean",
-    "nativeType": "boolean"
-  },
-  "2a03": {
-    "name": "Reconnection Address",
-    "type": "org.bluetooth.characteristic.gap.reconnection_address",
-    "dataType": "integer",
-    "nativeType": "uint48",
-    "allowedValueRange": {
-      "minimum": 0,
-      "maximum": 281474976710655
-    }
-  },
   "2a04": {
-    "name": "Peripheral Preferred Connection Parameters",
-    "type": "org.bluetooth.characteristic.gap.peripheral_preferred_connection_parameters",
-    "dataType": "object",
-    "nativeType": {
-      "Minimum Connection Interval": "uint16",
-      "Maximum Connection Interval": "uint16",
-      "Slave Latency": "uint16",
-      "Connection Supervision Timeout Multiplier": "uint16"
-    }
+    "type": "object",
+    "properties": {
+      "Minimum Connection Interval": {
+        "type": "integer",
+        "oneOf": [
+          {
+            "minimum": 6,
+            "maximum": 3200
+          },
+          {
+            "enum": [
+              65535
+            ]
+          }
+        ]
+      },
+      "Maximum Connection Interval": {
+        "type": "integer",
+        "oneOf": [
+          {
+            "minimum": 6,
+            "maximum": 3200
+          },
+          {
+            "enum": [
+              65535
+            ]
+          }
+        ]
+      },
+      "Slave Latency": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 1000
+      },
+      "Connection Supervision Timeout Multiplier": {
+        "type": "integer",
+        "oneOf": [
+          {
+            "minimum": 10,
+            "maximum": 3200
+          },
+          {
+            "enum": [
+              65535
+            ]
+          }
+        ]
+      }
+    },
+    "required": [
+      "Minimum Connection Interval",
+      "Maximum Connection Interval",
+      "Slave Latency",
+      "Connection Supervision Timeout Multiplier"
+    ]
   },
   "2a05": {
-    "name": "Service Changed",
-    "type": "org.bluetooth.characteristic.gatt.service_changed",
-    "dataType": "object",
-    "nativeType": {
-      "Start of Affected Attribute Handle Range": "uint16",
-      "End of Affected Attribute Handle Range": "uint16"
-    }
-  },
-  "2a06": {
-    "name": "Alert Level",
-    "type": "org.bluetooth.characteristic.alert_level",
-    "dataType": "integer",
-    "allowedValueRange": {
-      "minimum": 0,
-      "maximum": 2,
-      "step": 1
+    "type": "object",
+    "properties": {
+      "Start of Affected Attribute Handle Range": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 65535
+      },
+      "End of Affected Attribute Handle Range": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 65535
+      }
     },
-    "nativeType": "uint8"
-  },
-  "2a07": {
-    "name": "Tx Power Level",
-    "type": "org.bluetooth.characteristic.tx_power_level",
-    "dataType": "integer",
-    "allowedValueRange": {
-      "minimum": -100,
-      "maximum": 20,
-      "step": 1
-    },
-    "nativeType": "sint8"
+    "required": [
+      "Start of Affected Attribute Handle Range",
+      "End of Affected Attribute Handle Range"
+    ]
   },
   "2a08": {
-    "name": "Date Time",
-    "type": "org.bluetooth.characteristic.date_time",
-    "dataType": "object",
-    "nativeType": {
-      "Year": "uint16",
-      "Month": "uint8",
-      "Day": "uint8",
-      "Hours": "uint8",
-      "Minutes": "uint8",
-      "Seconds": "uint8"
-    }
-  },
-  "2a09": {
-    "name": "Day of Week",
-    "type": "org.bluetooth.characteristic.day_of_week",
-    "dataType": "integer",
-    "allowedValueRange": {
-      "minimum": 0,
-      "maximum": 7,
-      "step": 1
+    "type": "object",
+    "properties": {
+      "Year": {
+        "type": "integer",
+        "minimum": 1582,
+        "maximum": 9999
+      },
+      "Month": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 12
+      },
+      "Day": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 31
+      },
+      "Hours": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 23
+      },
+      "Minutes": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 59
+      },
+      "Seconds": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 59
+      }
     },
-    "nativeType": "uint8"
+    "required": [
+      "Year",
+      "Month",
+      "Day",
+      "Hours",
+      "Minutes",
+      "Seconds"
+    ]
   },
   "2a0a": {
-    "name": "Day Date Time",
-    "type": "org.bluetooth.characteristic.day_date_time",
-    "dataType": "object",
-    "nativeType": {
-      "Year": "uint16",
-      "Month": "uint8",
-      "Day": "uint8",
-      "Hours": "uint8",
-      "Minutes": "uint8",
-      "Seconds": "uint8",
-      "Day of Week": "uint8"
-    }
+    "type": "object",
+    "properties": {
+      "Year": {
+        "type": "integer",
+        "minimum": 1582,
+        "maximum": 9999
+      },
+      "Month": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 12
+      },
+      "Day": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 31
+      },
+      "Hours": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 23
+      },
+      "Minutes": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 59
+      },
+      "Seconds": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 59
+      },
+      "Day of Week": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 7
+      }
+    },
+    "required": [
+      "Year",
+      "Month",
+      "Day",
+      "Hours",
+      "Minutes",
+      "Seconds",
+      "Day of Week"
+    ]
   },
   "2a0c": {
     "name": "Exact Time 256",
