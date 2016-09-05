@@ -1,4 +1,89 @@
 {
+  "definitions": {
+    "date_time": {
+      "type": "object",
+      "properties": {
+        "Year": {
+          "type": "integer",
+          "minimum": 1582,
+          "maximum": 9999
+        },
+        "Month": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 12
+        },
+        "Day": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 31
+        },
+        "Hours": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 23
+        },
+        "Minutes": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 59
+        },
+        "Seconds": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 59
+        }
+      },
+      "required": [
+        "Year",
+        "Month",
+        "Day",
+        "Hours",
+        "Minutes",
+        "Seconds"
+      ]
+    },
+    "day_of_week": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 7
+    },
+    "day_date_time": {
+      "type": "object",
+      "properties": {
+        "date_time": {
+          "$ref": "#/definitions/date_time"
+        },
+        "day_of_week": {
+          "$ref": "#/definitions/day_of_week"
+        }
+      },
+      "required": [
+        "date_time",
+        "day_of_week"
+      ]
+    },
+    "exact_time_256": {
+      "type": "object",
+      "properties": {
+        "day_date_time": {
+          "$ref": "#/definitions/day_date_time"
+        },
+        "Fractions256": {
+          "$ref": "#/definitions/Fractions256"
+        }
+      },
+      "required": [
+        "day_date_time",
+        "Fractions256"
+      ]
+    },
+    "Fractions256": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 255
+    }
+  },
   "2a04": {
     "type": "object",
     "properties": {
@@ -77,128 +162,16 @@
     ]
   },
   "2a08": {
-    "type": "object",
-    "properties": {
-      "Year": {
-        "type": "integer",
-        "minimum": 1582,
-        "maximum": 9999
-      },
-      "Month": {
-        "type": "integer",
-        "minimum": 0,
-        "maximum": 12
-      },
-      "Day": {
-        "type": "integer",
-        "minimum": 1,
-        "maximum": 31
-      },
-      "Hours": {
-        "type": "integer",
-        "minimum": 0,
-        "maximum": 23
-      },
-      "Minutes": {
-        "type": "integer",
-        "minimum": 0,
-        "maximum": 59
-      },
-      "Seconds": {
-        "type": "integer",
-        "minimum": 0,
-        "maximum": 59
-      }
-    },
-    "required": [
-      "Year",
-      "Month",
-      "Day",
-      "Hours",
-      "Minutes",
-      "Seconds"
-    ]
+    "$ref": "#/definitions/date_time"
   },
   "2a0a": {
-    "type": "object",
-    "properties": {
-      "Year": {
-        "type": "integer",
-        "minimum": 1582,
-        "maximum": 9999
-      },
-      "Month": {
-        "type": "integer",
-        "minimum": 0,
-        "maximum": 12
-      },
-      "Day": {
-        "type": "integer",
-        "minimum": 1,
-        "maximum": 31
-      },
-      "Hours": {
-        "type": "integer",
-        "minimum": 0,
-        "maximum": 23
-      },
-      "Minutes": {
-        "type": "integer",
-        "minimum": 0,
-        "maximum": 59
-      },
-      "Seconds": {
-        "type": "integer",
-        "minimum": 0,
-        "maximum": 59
-      },
-      "Day of Week": {
-        "type": "integer",
-        "minimum": 0,
-        "maximum": 7
-      }
-    },
-    "required": [
-      "Year",
-      "Month",
-      "Day",
-      "Hours",
-      "Minutes",
-      "Seconds",
-      "Day of Week"
-    ]
+    "$ref": "#/definitions/day_date_time"
   },
   "2a0c": {
-    "name": "Exact Time 256",
-    "type": "org.bluetooth.characteristic.exact_time_256",
-    "dataType": "object",
-    "nativeType": "object"
-  },
-  "2a0d": {
-    "name": "DST Offset",
-    "type": "org.bluetooth.characteristic.dst_offset",
-    "dataType": "integer",
-    "allowedValueRange": {
-      "minimum": 0,
-      "maximum": 8,
-      "step": 1
-    },
-    "nativeType": "uint8"
-  },
-  "2a0e": {
-    "name": "Time Zone",
-    "type": "org.bluetooth.characteristic.time_zone",
-    "dataType": "integer",
-    "allowedValueRange": {
-      "minimum": -48,
-      "maximum": 56,
-      "step": 1
-    },
-    "nativeType": "sint8"
+    "$ref": "#/definitions/exact_time_256"
   },
   "2a0f": {
-    "name": "Local Time Information",
-    "type": "org.bluetooth.characteristic.local_time_information",
+    "type": "object",
     "dataType": "object",
     "nativeType": "object"
   },

@@ -35,21 +35,13 @@
     "name": "Peripheral Preferred Connection Parameters",
     "type": "org.bluetooth.characteristic.gap.peripheral_preferred_connection_parameters",
     "dataType": "object",
-    "nativeType": {
-      "Minimum Connection Interval": "uint16",
-      "Maximum Connection Interval": "uint16",
-      "Slave Latency": "uint16",
-      "Connection Supervision Timeout Multiplier": "uint16"
-    }
+    "schema": "/2a04"
   },
   "2a05": {
     "name": "Service Changed",
     "type": "org.bluetooth.characteristic.gatt.service_changed",
     "dataType": "object",
-    "nativeType": {
-      "Start of Affected Attribute Handle Range": "uint16",
-      "End of Affected Attribute Handle Range": "uint16"
-    }
+    "schema": "/2a05"
   },
   "2a06": {
     "name": "Alert Level",
@@ -77,14 +69,23 @@
     "name": "Date Time",
     "type": "org.bluetooth.characteristic.date_time",
     "dataType": "object",
-    "nativeType": {
-      "Year": "uint16",
-      "Month": "uint8",
-      "Day": "uint8",
-      "Hours": "uint8",
-      "Minutes": "uint8",
-      "Seconds": "uint8"
-    }
+    "schema": "/2a08"
+  },
+  "nativeTypes": {
+    "Minimum Connection Interval": "uint16",
+    "Maximum Connection Interval": "uint16",
+    "Slave Latency": "uint16",
+    "Connection Supervision Timeout Multiplier": "uint16",
+    "Start of Affected Attribute Handle Range": "uint16",
+    "End of Affected Attribute Handle Range": "uint16",
+    "Year": "uint16",
+    "Month": "uint8",
+    "Day": "uint8",
+    "Hours": "uint8",
+    "Minutes": "uint8",
+    "Seconds": "uint8",
+    "Day of Week": "uint8",
+    "Fractions256": "uint8"
   },
   "2a09": {
     "name": "Day of Week",
@@ -101,21 +102,13 @@
     "name": "Day Date Time",
     "type": "org.bluetooth.characteristic.day_date_time",
     "dataType": "object",
-    "nativeType": {
-      "Year": "uint16",
-      "Month": "uint8",
-      "Day": "uint8",
-      "Hours": "uint8",
-      "Minutes": "uint8",
-      "Seconds": "uint8",
-      "Day of Week": "uint8"
-    }
+    "schema": "/2a0a"
   },
   "2a0c": {
     "name": "Exact Time 256",
     "type": "org.bluetooth.characteristic.exact_time_256",
     "dataType": "object",
-    "nativeType": "object"
+    "schema": "/2a0c"
   },
   "2a0d": {
     "name": "DST Offset",
@@ -143,7 +136,7 @@
     "name": "Local Time Information",
     "type": "org.bluetooth.characteristic.local_time_information",
     "dataType": "object",
-    "nativeType": "object"
+    "schema": "/2a0f"
   },
   "2a11": {
     "name": "Time with DST",
