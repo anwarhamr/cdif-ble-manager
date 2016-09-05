@@ -1,8 +1,7 @@
 var util = require('util');
 var events = require('events');
 var NobleDevice = require('noble-device');
-var YeelightBlue = require('cdif-yeelight-blue');
-var SensorTag = require('cdif-sensortag');
+var supported_modules = require('./modules.json');
 
 var connect = function(user, pass, callback) {
   var _this = this;
@@ -60,17 +59,16 @@ var collectDeviceInformation = function(device) {
 
 function BleDeviceManager() {
   this.onDiscoverBleDevice = function(bleDevice) {
-    var device;
+    var device = null;
     var peripheral = bleDevice._peripheral;
     //TODO: in the future device type check should follow GATT standard profiles
-    if (YeelightBlue.is(peripheral)) {
-      var yeelightBlueDevice = new YeelightBlue(bleDevice);
-      device = yeelightBlueDevice;
-    }
-    else if (SensorTag.is(peripheral)) {
-      var sensorTagDevice = new SensorTag(bleDevice);
-      device = sensorTagDevice;
-    }
+    supported_modules.forEach(function(item) {
+      var mod = require(item);
+      if (mod.is(peripheral)) {
+        device = new mod(bleDevice);
+      }
+    });
+    if (device == null) return;
     device._connect = connect.bind(device);
     device._disconnect = disconnect.bind(device);
     device._getHWAddress = getHWAddress.bind(device);
