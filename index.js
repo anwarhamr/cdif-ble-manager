@@ -5,7 +5,6 @@ var YeelightBlue = require('cdif-yeelight-blue');
 var SensorTag = require('cdif-sensortag');
 
 var connect = function(user, pass, callback) {
-  var _this = this;
   this.device.connectAndSetup(function(err) {
     callback(err);
   });
