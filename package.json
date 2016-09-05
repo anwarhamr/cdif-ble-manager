@@ -1,6 +1,6 @@
 {
   "name": "cdif-ble-manager",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "BLE manager for CDIF framework",
   "main": "index.js",
   "scripts": {
