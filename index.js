@@ -5,6 +5,7 @@ var YeelightBlue = require('cdif-yeelight-blue');
 var SensorTag = require('cdif-sensortag');
 
 var connect = function(user, pass, callback) {
+  var _this = this;
   this.device.connectAndSetup(function(err) {
     callback(err);
   });
@@ -24,6 +25,39 @@ var getHWAddress = function(callback) {
   }
 };
 
+var collectDeviceInformation = function(device) {
+  device.device.readDeviceName(function(err, deviceName) {
+    if(!err) {
+      device.friendlyName = deviceName;
+    }
+  });
+  device.device.readSerialNumber(function(err, serialNumber) {
+    if(!err) {
+      device.serialNumber = serialNumber;
+    }
+  });
+  device.device.readFirmwareRevision(function(err, firmwareRevision) {
+    if(!err) {
+      device.firmwareRevision = firmwareRevision;
+    }
+  });
+  device.device.readHardwareRevision(function(err, hardwareRevision) {
+    if(!err) {
+      device.hardwareRevision = hardwareRevision;
+    }
+  });
+  device.device.readSoftwareRevision(function(err, softwareRevision) {
+    if(!err) {
+      device.softwareRevision = softwareRevision;
+    }
+  });
+  device.device.readManufacturerName(function(err, manufacturerName) {
+    if(!err) {
+      device.manufacturerName = manufacturerName;
+    }
+  });
+}
+
 function BleDeviceManager() {
   this.onDiscoverBleDevice = function(bleDevice) {
     var device;
@@ -37,13 +71,12 @@ function BleDeviceManager() {
       var sensorTagDevice = new SensorTag(bleDevice);
       device = sensorTagDevice;
     }
-    device.connect = connect.bind(device);
-    device.disconnect = disconnect.bind(device);
-    device.getHWAddress = getHWAddress.bind(device);
+    device._connect = connect.bind(device);
+    device._disconnect = disconnect.bind(device);
+    device._getHWAddress = getHWAddress.bind(device);
     this.emit('deviceonline', device, this);
   }.bind(this);
   this.discoverState = 'stopped';
-
 }
 
 util.inherits(BleDeviceManager, events.EventEmitter);
