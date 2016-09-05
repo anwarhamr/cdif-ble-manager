@@ -22,5 +22,5 @@
   "dependencies": {
     "noble-device": "~1.1.0",
     "cdif-yeelight-blue": "~1.0.1"
-  },
+  }
 }
