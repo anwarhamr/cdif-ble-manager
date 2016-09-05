@@ -2,6 +2,7 @@ var util = require('util');
 var events = require('events');
 var NobleDevice = require('noble-device');
 var YeelightBlue = require('cdif-yeelight-blue');
+var SensorTag = require('cdif-sensortag');
 
 var connect = function(user, pass, callback) {
   this.device.connectAndSetup(function(err) {
@@ -32,16 +33,17 @@ function BleDeviceManager() {
       var yeelightBlueDevice = new YeelightBlue(bleDevice);
       device = yeelightBlueDevice;
     }
-    // else if (localName === 'CC2650 SensorTag') {
-    //     var spec = require('./cc2650.json');
-    //     console.log('found cc2650');
-    // }
+    else if (SensorTag.is(peripheral)) {
+      var sensorTagDevice = new SensorTag(bleDevice);
+      device = sensorTagDevice;
+    }
     device.connect = connect.bind(device);
     device.disconnect = disconnect.bind(device);
     device.getHWAddress = getHWAddress.bind(device);
     this.emit('deviceonline', device, this);
   }.bind(this);
   this.discoverState = 'stopped';
+
 }
 
 util.inherits(BleDeviceManager, events.EventEmitter);
@@ -51,6 +53,7 @@ var BleDevice = function (peripheral) {
 }
 
 NobleDevice.Util.inherits(BleDevice, NobleDevice);
+NobleDevice.Util.mixin(BleDevice, NobleDevice.DeviceInformationService);
 
 BleDeviceManager.prototype.discoverDevices = function() {
   if (this.discoverState === 'discovering') {
