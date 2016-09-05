@@ -9,7 +9,7 @@ var connect = function(user, pass, callback) {
   this.device.connectAndSetup(function(err) {
     if (!err) {
       if (_this instanceof GenericDevice) {
-        _this.updateSpec();
+        _this._updateDeviceSpec();
       }
     }
     callback(err);
