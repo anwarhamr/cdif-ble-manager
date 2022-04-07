@@ -23,6 +23,6 @@
     "noble-device": "~1.1.0",
     "cdif-yeelight-blue": "latest",
     "cdif-sensortag": "latest",
-    "async": "~1.4.2"
+    "async": "~3.2.2"
   }
 }
